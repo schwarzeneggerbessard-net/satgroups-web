@@ -1,65 +1,213 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets | Satgroup's. llc</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets | Satgroup's LLC</title>
+    <meta name="description" content="Découvrez les projets communautaires et initiatives stratégiques de Satgroup's LLC." />
+    <meta name="author" content="Satgroup's LLC - Schwarzenegger Bessard" />
+    <meta name="robots" content="index, follow" />
+
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; background: #fdfdfd; }
-        header { background: #2c3e50; color: #fff; padding: 1.5rem 0; text-align: center; }
-        nav { display: flex; justify-content: center; gap: 20px; background: #34495e; padding: 12px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; }
-        .content { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .project-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 25px; margin-bottom: 30px; border-top: 5px solid #2980b9; }
-        .img-placeholder { background: #e9ecef; width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 5px; margin-bottom: 15px; overflow: hidden; }
-        .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
-        .form-section { background: #f4f4f4; padding: 30px; border-radius: 8px; margin-top: 40px; }
-        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .btn-submit { background: #2980b9; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        footer { text-align: center; padding: 30px; background: #2c3e50; color: white; margin-top: 50px; }
+        :root {
+            --primary: #1f2d3d;
+            --secondary: #2f4156;
+            --accent: #e67e22;
+            --accent-dark: #cf6d17;
+            --bg: #f4f6f8;
+            --white: #ffffff;
+            --text: #333333;
+            --muted: #6b7280;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --radius: 14px;
+            --max-width: 1100px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 0.5px; }
+        header p { max-width: 760px; margin: 15px auto 0; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; }
+
+        nav {
+            background: #243342;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-1px); }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 40px 20px; }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 35px;
+            box-shadow: var(--shadow);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-card h2 { margin-top: 0; color: var(--primary); font-size: 2rem; }
+
+        .section-title { text-align: center; margin: 60px 0 10px; color: var(--primary); font-size: 2.2rem; }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 6px solid var(--accent);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #fff4ea;
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .btn-group { display: flex; gap: 12px; margin-top: auto; padding-top: 20px; }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .btn-primary { background: var(--accent); color: var(--white); }
+        .btn-primary:hover { background: var(--accent-dark); }
+        .btn-secondary { background: #edf2f7; color: var(--primary); }
+
+        .cta-section {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: var(--radius);
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 80px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Satgroup's. llc</h1>
-</header>
+    <header>
+        <h1>Satgroup's LLC</h1>
+        <p>Innovation communautaire & Ingénierie durable au service de demain.</p>
+    </header>
 
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="#">Artistes</a>
-    <a href="projets.html">Projets Communautaires</a>
-    <a href="#">Contact</a>
-</nav>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#projets">Projets</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<div class="content">
-    <h2>Nos Initiatives Communautaires</h2>
-    
-    <div class="project-card">
-        <div class="img-placeholder">
-            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Ingénierie Eau">
-        </div>
-        <h3>Distribution d'eau potable (Water Truck)</h3>
-        <p><strong>Localisation :</strong> Joliet, Illinois</p>
-        <p>Nous développons une infrastructure mobile pour assurer un accès fiable à l'eau potable. Un projet solidaire piloté par l'ingénierie pour le bien de tous.</p>
-        <p><em>Statut : En phase de planification (Objectif 12 mois)</em></p>
-    </div>
+    <main class="container">
+        <section class="hero-card">
+            <h2>Centre d'Opérations Stratégiques</h2>
+            <p>Satgroup's LLC pilote des initiatives à fort impact social. Nous combinons la puissance du Cloud AWS et de l'ingénierie de terrain pour résoudre des problématiques locales concrètes.</p>
+        </section>
 
-    <div class="form-section">
-        <h3>Captation Public & Avis</h3>
-        <p>Vous faites partie de la communauté et souhaitez nous soutenir ou poser une question ?</p>
-        <form>
-            <input type="text" placeholder="Votre Nom" required>
-            <input type="email" placeholder="Votre Email" required>
-            <textarea rows="4" placeholder="Votre message ou avis sur le projet Water Truck"></textarea>
-            <button type="submit" class="btn-submit">Envoyer mon avis</button>
-        </form>
-    </div>
-</div>
+        <h2 id="projets" class="section-title">Initiatives en Cours</h2>
 
-<footer>
-    &copy; 2026 Satgroup's. llc - Bâtir demain aujourd'hui.
-</footer>
+        <section class="projects-grid">
+            <article class="project-card">
+                <span class="status-badge">Phase Planification (12 mois)</span>
+                <h3>Distribution d’Eau (Water Truck)</h3>
+                <p><strong>Lieu :</strong> Joliet, Illinois</p>
+                <p>Développement d'une infrastructure mobile de distribution d'eau potable pour sécuriser l'accès aux ressources vitales au sein de la communauté.</p>
+                <div class="btn-group">
+                    <a href="mailto:schwarzeneggerbessard@gmail.com?subject=Soutien Projet Water Truck" class="btn btn-primary">Soutenir</a>
+                    <a href="#" class="btn btn-secondary">Détails</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <span class="status-badge">Concept IA & Créativité</span>
+                <h3>Hub Modulaire pour Artistes</h3>
+                <p><strong>Objectif :</strong> Visibilité & Réseau</p>
+                <p>Plateforme technologique permettant aux talents locaux de collaborer, de promouvoir leurs œuvres et d'accéder à des outils de gestion modernes.</p>
+                <div class="btn-group">
+                    <a href="mailto:schwarzeneggerbessard@gmail.com?subject=Collaboration Artistes" class="btn btn-primary">Rejoindre</a>
+                    <a href="#" class="btn btn-secondary">Vision</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="contact" class="cta-section">
+            <h3>Bâtissons l'avenir ensemble</h3>
+            <p>Une question ? Une proposition de collaboration ? Notre centre d'opérations est à votre écoute.</p>
+            <a href="mailto:schwarzeneggerbessard@gmail.com" class="btn btn-secondary" style="display:inline-block; width:auto; padding: 15px 40px;">Contacter Satgroup's LLC</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Satgroup's. llc — Tous droits réservés.</p>
+        <p>Opérations 24/7 - Joliet, Illinois</p>
+    </footer>
 
 </body>
 </html>
