@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projets | Satgroup's LLC</title>
-    <meta name="description" content="Découvrez les projets communautaires et initiatives stratégiques de Satgroup's LLC." />
-    <meta name="author" content="Satgroup's LLC - Schwarzenegger Bessard" />
-    <meta name="robots" content="index, follow" />
-
+    <title>Satgroup-s. llc | Community Action Group</title>
+    <meta name="description" content="Site officiel de Satgroup-s. llc - Initiatives communautaires à Joliet, Illinois." />
+    
     <style>
         :root {
             --primary: #1f2d3d;
@@ -20,7 +18,7 @@
             --muted: #6b7280;
             --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             --radius: 14px;
-            --max-width: 1100px;
+            --max-width: 1200px;
         }
 
         * { box-sizing: border-box; }
@@ -37,20 +35,21 @@
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-            padding: 80px 20px 60px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 0.5px; }
-        header p { max-width: 760px; margin: 15px auto 0; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
 
+        /* Navigation Complète (Wix Style) */
         nav {
             background: #243342;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 18px;
-            padding: 16px 20px;
+            gap: 10px;
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -59,154 +58,128 @@
 
         nav a {
             color: var(--white);
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             text-decoration: none;
+            font-size: 0.95rem;
         }
 
-        nav a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-1px); }
+        nav a:hover { background: rgba(255, 255, 255, 0.1); }
+        nav a.active-btn { border: 1px solid var(--accent); color: var(--accent); }
 
         .container { max-width: var(--max-width); margin: 0 auto; padding: 40px 20px; }
 
-        .hero-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 35px;
-            box-shadow: var(--shadow);
-            margin-top: -50px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-card h2 { margin-top: 0; color: var(--primary); font-size: 2rem; }
-
-        .section-title { text-align: center; margin: 60px 0 10px; color: var(--primary); font-size: 2.2rem; }
-
-        .projects-grid {
+        /* Sections Styles */
+        .section-title { text-align: center; margin: 50px 0 30px; color: var(--primary); font-size: 2.2rem; }
+        
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .project-card {
+        .card {
             background: var(--white);
             border-radius: var(--radius);
             padding: 30px;
             box-shadow: var(--shadow);
-            border-top: 6px solid var(--accent);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            transition: transform 0.3s ease;
         }
 
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
-
-        .status-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 20px;
-            background: #fff4ea;
-            color: var(--accent-dark);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .btn-group { display: flex; gap: 12px; margin-top: auto; padding-top: 20px; }
+        .card:hover { transform: translateY(-5px); }
 
         .btn {
-            padding: 12px 20px;
-            border-radius: 10px;
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: 600;
-            text-align: center;
-            transition: all 0.2s ease;
             text-decoration: none;
-            flex: 1;
-        }
-
-        .btn-primary { background: var(--accent); color: var(--white); }
-        .btn-primary:hover { background: var(--accent-dark); }
-        .btn-secondary { background: #edf2f7; color: var(--primary); }
-
-        .cta-section {
-            margin-top: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            border-radius: var(--radius);
-            padding: 50px 30px;
+            transition: 0.3s;
             text-align: center;
         }
+
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: var(--accent-dark); }
 
         footer {
-            margin-top: 80px;
             background: var(--primary);
-            color: var(--white);
+            color: white;
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
+            margin-top: 60px;
         }
+
+        .social-links a { color: white; margin: 0 15px; text-decoration: none; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Satgroup's LLC</h1>
-        <p>Innovation communautaire & Ingénierie durable au service de demain.</p>
+        <h1>Satgroup-s. llc</h1>
+        <p>Community Action Group — "We Need Everyone"</p>
     </header>
 
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="#projets">Projets</a>
-        <a href="#vision">Vision</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="https://satgroupsinc.wixsite.com/satgroup-s-inc/donate" class="active-btn">Donate</a>
+        <a href="#causes">Causes</a>
+        <a href="#take-action">Take Action</a>
+        <a href="https://satgroupsinc.wixsite.com/satgroup-s-inc/blank-7">News</a>
+        <a href="mailto:satgroups.inc@gmail.com">Contact</a>
+        <a href="https://satgroupsinc.wixsite.com/satgroup-s-inc/quote">Quote</a>
     </nav>
 
     <main class="container">
-        <section class="hero-card">
-            <h2>Centre d'Opérations Stratégiques</h2>
-            <p>Satgroup's LLC pilote des initiatives à fort impact social. Nous combinons la puissance du Cloud AWS et de l'ingénierie de terrain pour résoudre des problématiques locales concrètes.</p>
+        
+        <section id="about" class="card">
+            <h2>About Us</h2>
+            <p>Satgroup-s. llc est un groupe d'action communautaire dédié à la justice sociale et environnementale. Notre mission est d'autonomiser les individus à Joliet, Illinois, pour créer un changement durable.</p>
         </section>
 
-        <h2 id="projets" class="section-title">Initiatives en Cours</h2>
+        <h2 id="causes" class="section-title">Nos Causes</h2>
+        <div class="grid">
+            <div class="card" style="border-top: 5px solid #e67e22;">
+                <h3>Distribution d’Eau</h3>
+                <p>Projet Water Truck : Sécuriser l'accès à l'eau potable pour les zones en difficulté.</p>
+            </div>
+            <div class="card" style="border-top: 5px solid #2ecc71;">
+                <h3>Justice Environnementale</h3>
+                <p>Plaidoyer pour un air pur et des conditions de vie saines pour tous.</p>
+            </div>
+        </div>
 
-        <section class="projects-grid">
-            <article class="project-card">
-                <span class="status-badge">Phase Planification (12 mois)</span>
-                <h3>Distribution d’Eau (Water Truck)</h3>
-                <p><strong>Lieu :</strong> Joliet, Illinois</p>
-                <p>Développement d'une infrastructure mobile de distribution d'eau potable pour sécuriser l'accès aux ressources vitales au sein de la communauté.</p>
-                <div class="btn-group">
-                    <a href="mailto:schwarzeneggerbessard@gmail.com?subject=Soutien Projet Water Truck" class="btn btn-primary">Soutenir</a>
-                    <a href="#" class="btn btn-secondary">Détails</a>
-                </div>
-            </article>
+        <h2 id="take-action" class="section-title">Take Action</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Volunteering</h3>
+                <p>Soyez une force pour le bien. Donnez de votre temps pour nos projets locaux.</p>
+                <a href="mailto:satgroups.inc@gmail.com?subject=Volunteer" class="btn btn-primary">Join Us</a>
+            </div>
+            <div class="card">
+                <h3>Organizing an Event</h3>
+                <p>Aidez-nous à mobiliser la communauté autour de nos initiatives.</p>
+                <a href="mailto:satgroups.inc@gmail.com" class="btn btn-primary">Start Now</a>
+            </div>
+            <div class="card">
+                <h3>Fundraising</h3>
+                <p>Participez à la collecte de fonds pour soutenir nos infrastructures mobiles.</p>
+                <a href="https://satgroupsinc.wixsite.com/satgroup-s-inc/donate" class="btn btn-primary">Contribute</a>
+            </div>
+        </div>
 
-            <article class="project-card">
-                <span class="status-badge">Concept IA & Créativité</span>
-                <h3>Hub Modulaire pour Artistes</h3>
-                <p><strong>Objectif :</strong> Visibilité & Réseau</p>
-                <p>Plateforme technologique permettant aux talents locaux de collaborer, de promouvoir leurs œuvres et d'accéder à des outils de gestion modernes.</p>
-                <div class="btn-group">
-                    <a href="mailto:schwarzeneggerbessard@gmail.com?subject=Collaboration Artistes" class="btn btn-primary">Rejoindre</a>
-                    <a href="#" class="btn btn-secondary">Vision</a>
-                </div>
-            </article>
-        </section>
-
-        <section id="contact" class="cta-section">
-            <h3>Bâtissons l'avenir ensemble</h3>
-            <p>Une question ? Une proposition de collaboration ? Notre centre d'opérations est à votre écoute.</p>
-            <a href="mailto:schwarzeneggerbessard@gmail.com" class="btn btn-secondary" style="display:inline-block; width:auto; padding: 15px 40px;">Contacter Satgroup's LLC</a>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Satgroup's. llc — Tous droits réservés.</p>
-        <p>Opérations 24/7 - Joliet, Illinois</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+        </div>
+        <p>&copy; 2026 Satgroup-s. llc — Joliet, Illinois</p>
+        <p>Email: satgroups.inc@gmail.com | Tel: (+509) 3 849 6926</p>
     </footer>
 
 </body>
